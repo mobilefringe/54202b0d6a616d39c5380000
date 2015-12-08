@@ -69,6 +69,26 @@ function loadMallDataCached(callback){
     
 }
 
+function loadMallDataCachedDixie(callback){
+    if (mallData != null){
+        log("hey I have some mall data already!");
+        log(JSON.stringify(JSON.stringify(data)));
+    }
+    if(typeof(sessionStorage.mallData) == 'undefined'){
+        log('fetching mallData from: '+sessionStorage.MM_URL);
+        $.getJSON(sessionStorage.MM_URL).done(function(data) {
+            mallData = $.parseJSON(data);;
+            sessionStorage.setItem('mallData', JSON.stringify(data));
+            log('done fetching mallData from: '+sessionStorage.MM_URL);
+            callback();
+        });
+    }else{
+       callback();
+       log('mallData Already loaded');
+    }
+    
+}
+
 //Call a function after matching images have finished loading
 function imagesLoadedEvent(selector, callback) {
     var This = this;
