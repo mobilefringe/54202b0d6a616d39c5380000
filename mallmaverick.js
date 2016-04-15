@@ -765,6 +765,20 @@ function getPromotionsForIds(promo_ids){
     return promos;
 }
 
+function getPublishedPromotionsForIds(promo_ids){
+    var promos=[];
+    var all_promos = getStorePromotionsListByStoreName()
+    for (i = 0; i < all_promos.length; i++) {
+        for (j = 0; j < promo_ids.length; j++) { 
+            if(promo_ids[j] == all_promos[i].id){
+                promos.push(all_promos[i]);
+                
+            }
+        }
+    }
+    return promos;
+}
+
 
 function getHoursForIds(hour_ids){
     var hours=[];
