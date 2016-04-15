@@ -771,8 +771,8 @@ function getPublishedPromotionsForIds(promo_ids){
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             var today = new Date();
-            
-            if(promo_ids[j] == all_promos[i].id){
+            var p_date = new Date(v.show_on_web_date);
+            if(promo_ids[j] == all_promos[i].id && p_date <= today ) {
                 promos.push(all_promos[i]);
                 
             }
