@@ -770,6 +770,8 @@ function getPublishedPromotionsForIds(promo_ids){
     var all_promos = getPromotionsList();
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
+            var today = new Date();
+            
             if(promo_ids[j] == all_promos[i].id){
                 promos.push(all_promos[i]);
                 
