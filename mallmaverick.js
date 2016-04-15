@@ -767,7 +767,7 @@ function getPromotionsForIds(promo_ids){
 
 function getPublishedPromotionsForIds(promo_ids){
     var promos=[];
-    var all_promos = getStorePromotionsListByStoreName()
+    var all_promos = getPromotionsList();
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             if(promo_ids[j] == all_promos[i].id){
