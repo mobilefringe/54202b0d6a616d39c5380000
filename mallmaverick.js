@@ -79,7 +79,6 @@ function loadSocialFeeds(){
         mallSocialData = data;
         sessionStorage.setItem('mallSocialData', JSON.stringify(data));
         log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
-    
     });
 }
 
