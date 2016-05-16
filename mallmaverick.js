@@ -539,6 +539,10 @@ function getPromotionsList(){
     return mallDataJSON.promotions;
 }
 
+function getSocialFeed(){
+    
+}
+
 
 function getContestList(){
     initData();
