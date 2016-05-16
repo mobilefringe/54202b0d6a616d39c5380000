@@ -78,7 +78,7 @@ function loadSocialFeeds(){
     $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
         mallData = data;
         sessionStorage.setItem('mallSocialData', JSON.stringify(data));
-        log('done fetching Social mallData from: '+sessionStorage.MM_URL);
+        log('done fetching Social mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
     
     });
 }
