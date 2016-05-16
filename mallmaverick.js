@@ -44,11 +44,9 @@ function loadMallData(callback){
             mallData = data;
             sessionStorage.setItem('mallData', JSON.stringify(data));
             log('done fetching mallData from: '+sessionStorage.MM_URL);
-            loadSocialFeeds()
             callback();
         });
     }else{
-       loadSocialFeeds()
        callback();
        log('mallData Already loaded');
     }
