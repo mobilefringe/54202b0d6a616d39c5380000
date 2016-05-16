@@ -83,8 +83,8 @@ function loadSocialFeeds(callback){
         log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
         $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
             mallSocialData = data;
-        sessionStorage.setItem('mallSocialData', JSON.stringify(data));
-        log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
+            sessionStorage.setItem('mallSocialData', JSON.stringify(data));
+            log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
             callback();
         });
     }else{
