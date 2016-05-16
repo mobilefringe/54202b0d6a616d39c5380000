@@ -73,6 +73,16 @@ function loadMallDataCached(callback){
     
 }
 
+
+function loadSocialFeeds(){
+    $.getJSON(sessionStorage.MM_URL).done(function(data) {
+        mallData = data;
+        sessionStorage.setItem('mallData', JSON.stringify(data));
+        log('done fetching mallData from: '+sessionStorage.MM_URL);
+        callback();
+    });
+}
+
 //Call a function after matching images have finished loading
 function imagesLoadedEvent(selector, callback) {
     var This = this;
