@@ -75,10 +75,6 @@ function loadMallDataCached(callback){
 
 
 function loadSocialFeeds(callback){
-    if (mallSocialData != null){
-        log("hey I have some mall social data already!");
-        log(JSON.stringify(JSON.stringify(data)));
-    }
     if(true){//typeof(sessionStorage.mallData) == 'undefined'){
         log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
         $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
