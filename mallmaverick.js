@@ -541,7 +541,7 @@ function getPromotionsList(){
 
 function getSocialFeed(){
     var mallSocialData = JSON.parse(sessionStorage.mallSocialData);
-    return mallSocialData.promotions;
+    return mallSocialData.social;
 }
 
 
