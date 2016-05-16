@@ -48,7 +48,7 @@ function loadMallData(callback){
             callback();
         });
     }else{
-        loadSocialFeeds()
+       loadSocialFeeds()
        callback();
        log('mallData Already loaded');
     }
