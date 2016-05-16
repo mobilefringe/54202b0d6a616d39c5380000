@@ -540,7 +540,8 @@ function getPromotionsList(){
 }
 
 function getSocialFeed(){
-    
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.promotions;
 }
 
 
