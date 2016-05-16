@@ -75,7 +75,7 @@ function loadMallDataCached(callback){
 
 
 function loadSocialFeeds(){
-    $.getJSON(sessionStorage.MM_URL).done(function(data) {
+    $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
         mallData = data;
         sessionStorage.setItem('mallData', JSON.stringify(data));
         log('done fetching mallData from: '+sessionStorage.MM_URL);
