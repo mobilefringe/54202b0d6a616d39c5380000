@@ -75,18 +75,13 @@ function loadMallDataCached(callback){
 
 
 function loadSocialFeeds(callback){
-    if(true){//typeof(sessionStorage.mallData) == 'undefined'){
-        log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
-        $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
-            mallSocialData = data;
-            sessionStorage.setItem('mallSocialData', JSON.stringify(data));
-            log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
+    log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
+    $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
+        mallSocialData = data;
+        sessionStorage.setItem('mallSocialData', JSON.stringify(data));
+        log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
             callback();
-        });
-    }else{
-       callback();
-       log('mallSocialData Already loaded');
-    }
+    });
 }
 
 //Call a function after matching images have finished loading
