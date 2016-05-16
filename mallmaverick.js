@@ -16,6 +16,10 @@ function setEndPoint(url){
     sessionStorage.setItem('MM_URL', url);
 }
 
+function setSocialEndPoint(url){
+    sessionStorage.setItem('MM_URL', url);
+}
+
 
 function get_prefix(){
     var main_url = (sessionStorage.MM_URL).split('/');
@@ -93,6 +97,8 @@ function imagesLoadedEvent(selector, callback) {
         }
     });
 }
+
+function load_social()
 
 function isMallDataLoaded(){
     if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
