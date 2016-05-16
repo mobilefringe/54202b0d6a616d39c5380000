@@ -107,7 +107,7 @@ function imagesLoadedEvent(selector, callback) {
     });
 }
 
-function load_social()
+
 
 function isMallDataLoaded(){
     if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
