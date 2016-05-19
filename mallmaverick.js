@@ -808,7 +808,7 @@ function getMallHours(){
     var hours=[];
     var all_hours = getPropertyHours();
     $.each(all_hours, function(i, v){
-        if(v.store_id.length <= 0){
+        if(v.store_id.length == null){
             hours.push(v);
         }
     })
