@@ -805,15 +805,13 @@ function getPublishedPromotionsForIds(promo_ids){
 
 
 function getMallHours(){
+    var hours=[];
     var all_hours = getPropertyHours();
-    for (i = 0; i < all_hours.length; i++) {
-        for (j = 0; j < hour_ids.length; j++) { 
-            if(hour_ids[j] == all_hours[i].id){
-                hours.push(all_hours[i]);
-                
-            }
+    $.each(all_hours, function(i, v){
+        if(v.store_id.length =< 0){
+            hours.push(v);
         }
-    }
+    })
     return hours;
 }
 
