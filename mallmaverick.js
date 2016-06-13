@@ -88,7 +88,6 @@ function get_instagram(url,total, callback){
             feed_obj.image = v.images.low_resolution.url
             feed_obj.link = v.link
             if (i < total){
-                
                 var ig_rendered =  Mustache.render(template_html,feed_obj);
             }
         })
