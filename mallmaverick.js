@@ -93,7 +93,6 @@ function get_instagram(url,total, callback){
             if (i < total){
                 
                 var ig_rendered =  Mustache.render(html,feed_obj);
-                console.log(ig_rendered)
                 item_rendered.push(ig_rendered.trim());
             }
         })
