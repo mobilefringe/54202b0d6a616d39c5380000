@@ -74,7 +74,7 @@ function loadMallDataCached(callback){
 }
 
 function get_instagram(url, callback){
-    
+    log('fetching mallData from: ' + url);
 }
 
 
