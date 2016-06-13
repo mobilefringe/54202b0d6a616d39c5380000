@@ -73,8 +73,25 @@ function loadMallDataCached(callback){
     
 }
 
-function get_instagram(url, callback){
-    log('fetching mallData from: ' + url);
+function get_instagram(url,total, callback){
+    log('fetching instagram data from: ' + url);
+    $.getJSON(url).done(function(data) {
+        var insta_feed = data.social.instagram
+        $.each(insta_feed, function(i,v){
+            if(v.caption != null){
+                feed_obj.caption = v.caption.text
+            }
+            else{
+                feed_obj.caption = ""
+            }
+            feed_obj.image = v.images.low_resolution.url
+            feed_obj.link = v.link
+            if (i < total){
+            }
+        })
+        $(container).show();
+        $(container).html(item_rendered.join(''));
+    });
 }
 
 
