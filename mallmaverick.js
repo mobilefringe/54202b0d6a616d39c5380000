@@ -80,24 +80,25 @@ function get_instagram(url,total, size, callback){
     log('fetching instagram data from: ' + url);
     $.getJSON(url).done(function(data) {
         var insta_feed = data.social.instagram
-        console.log(insta_feed)
-        $.each(insta_feed, function(i,v){
-            var feed_obj = {}
-            if(v.caption != null){
-                feed_obj.caption = v.caption.text
-            }
-            else{
-                feed_obj.caption = ""
-            }
-            feed_obj.image = v.images[size].url
-            feed_obj.link = v.link
-            if (i < total){
-                
-                var ig_rendered =  Mustache.render(html,feed_obj);
-                item_rendered.push(ig_rendered.trim());
-            }
-        })
-        callback(item_rendered.join(''))
+        if(insta_feed != null){
+            $.each(insta_feed, function(i,v){
+                var feed_obj = {}
+                if(v.caption != null){
+                    feed_obj.caption = v.caption.text
+                }
+                else{
+                    feed_obj.caption = ""
+                }
+                feed_obj.image = v.images[size].url
+                feed_obj.link = v.link
+                if (i < total){
+                    
+                    var ig_rendered =  Mustache.render(html,feed_obj);
+                    item_rendered.push(ig_rendered.trim());
+                }
+            })
+            callback(item_rendered.join(''))
+        }
     });
 }
 
