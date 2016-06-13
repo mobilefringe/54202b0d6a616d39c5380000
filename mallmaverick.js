@@ -88,7 +88,7 @@ function get_instagram(url,total, callback, size){
             else{
                 feed_obj.caption = ""
             }
-            feed_obj.image = v.images.size.url
+            feed_obj.image = v.images['size'].url
             feed_obj.link = v.link
             if (i < total){
                 
