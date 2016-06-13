@@ -89,8 +89,6 @@ function get_instagram(url,total, callback){
             if (i < total){
             }
         })
-        $(container).show();
-        $(container).html(item_rendered.join(''));
     });
 }
 
