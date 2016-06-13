@@ -90,8 +90,9 @@ function get_instagram(url,total, callback){
             feed_obj.image = v.images.low_resolution.url
             feed_obj.link = v.link
             if (i < total){
-                console.log(feed_obj)
+                
                 var ig_rendered =  Mustache.render(html,feed_obj);
+                console.log(ig_rendered)
                 item_rendered.push(ig_rendered.trim());
             }
         })
