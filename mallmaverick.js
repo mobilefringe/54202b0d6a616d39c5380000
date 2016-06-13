@@ -75,6 +75,7 @@ function loadMallDataCached(callback){
 
 function get_instagram(url,total, callback){
     var html = '<a class="ig-image" target="_blank" href="{{link}}" ><img src="{{image}}" alt="{{caption}}"/></a>'
+    var item_rendered = [];
     log('fetching instagram data from: ' + url);
     $.getJSON(url).done(function(data) {
         var insta_feed = data.social.instagram
@@ -88,7 +89,8 @@ function get_instagram(url,total, callback){
             feed_obj.image = v.images.low_resolution.url
             feed_obj.link = v.link
             if (i < total){
-                var ig_rendered =  Mustache.render(template_html,feed_obj);
+                var ig_rendered =  Mustache.render(html,feed_obj);
+                item_rendered.push(ig_rendered.trim());
             }
         })
     });
