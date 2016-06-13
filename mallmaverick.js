@@ -80,6 +80,7 @@ function get_instagram(url,total, size, callback){
     log('fetching instagram data from: ' + url);
     $.getJSON(url).done(function(data) {
         var insta_feed = data.social.instagram
+        console.log(insta_feed)
         $.each(insta_feed, function(i,v){
             var feed_obj = {}
             if(v.caption != null){
