@@ -96,7 +96,7 @@ function get_instagram(url,total, callback){
                 item_rendered.push(ig_rendered.trim());
             }
         })
-        callback(item_rendered)
+        callback(item_rendered.join(''))
     });
 }
 
