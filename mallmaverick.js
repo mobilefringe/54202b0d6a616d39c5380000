@@ -73,6 +73,10 @@ function loadMallDataCached(callback){
     
 }
 
+function get_instagram(url, callback){
+    
+}
+
 
 function loadSocialFeeds(callback){
     log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
