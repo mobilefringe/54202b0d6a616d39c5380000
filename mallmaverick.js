@@ -76,11 +76,11 @@ function loadMallDataCached(callback){
 function get_instagram(url,total, callback){
     var html = '<a class="ig-image" target="_blank" href="{{link}}" ><img src="{{image}}" alt="{{caption}}"/></a>'
     var item_rendered = [];
-    var feed_obj = {}
     log('fetching instagram data from: ' + url);
     $.getJSON(url).done(function(data) {
         var insta_feed = data.social.instagram
         $.each(insta_feed, function(i,v){
+            var feed_obj = {}
             if(v.caption != null){
                 feed_obj.caption = v.caption.text
             }
