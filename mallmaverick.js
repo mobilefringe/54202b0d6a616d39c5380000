@@ -73,7 +73,7 @@ function loadMallDataCached(callback){
     
 }
 
-function get_instagram(url,total, callback, size){
+function get_instagram(url,total, size, callback){
     var html = '<a class="ig-image" target="_blank" href="{{{link}}}" ><img src="{{{image}}}" alt="{{caption}}" /></a>'
     var item_rendered = [];
     Mustache.parse(html); 
