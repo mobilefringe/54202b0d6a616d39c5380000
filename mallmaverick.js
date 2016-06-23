@@ -242,8 +242,10 @@ function getBanners(){
     today = new Date();
     $.each(banners, function(i, v){
         var end = new Date(v.end_date)
-        var start = new Date(star_end)
-        if ()
+        var start = new Date(start_end)
+        if (today >= start && today < end){
+            return_banners.push(v)
+        }
     })
     return banners
 }
