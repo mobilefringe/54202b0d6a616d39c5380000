@@ -242,11 +242,7 @@ function getBanners(){
     var banners = mallDataJSON.banners;
     today = new Date();
     $.each(banners, function(i, v){
-        var end = new Date(v.end_date)
-        var start = new Date(v.start_date)
-        if (today >= start && today < end){
-            return_banners.push(v)
-        }
+        
     })
     return return_banners
 }
