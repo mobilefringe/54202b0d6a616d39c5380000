@@ -248,7 +248,7 @@ function getBanners(){
             return_banners.push(v)
         }
     })
-    return return_banners
+    return banners
 }
 
 
