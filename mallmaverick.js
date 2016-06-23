@@ -236,6 +236,7 @@ function getComingSoonList(){
 }
 
 function getBanners(){
+    var return_banners = []
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var banners = mallDataJSON.banners;
@@ -247,7 +248,7 @@ function getBanners(){
             return_banners.push(v)
         }
     })
-    return banners
+    return return_banners
 }
 
 
