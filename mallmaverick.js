@@ -238,7 +238,14 @@ function getComingSoonList(){
 function getBanners(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.banners;
+    var banners = mallDataJSON.banners;
+    today = new Date();
+    $.each(banners, function(i, v){
+        var end = new Date(v.end_date)
+        var start = new Date(star_end)
+        if ()
+    })
+    return banners
 }
 
 
