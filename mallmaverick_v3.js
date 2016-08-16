@@ -906,7 +906,6 @@ function getTodaysHours(){
             if(hours[i].is_holiday){
                 
                 var holiday_date = moment()
-               console.log(holiday_date)
                 if(today.getMonth() == holiday_date.getMonth() && today.getDate() == parseInt(holiday_date.getDate())+ 1){
                     if(hours[i].is_holiday_recurring_every_year){
                         holiday_hours =  hours[i];
