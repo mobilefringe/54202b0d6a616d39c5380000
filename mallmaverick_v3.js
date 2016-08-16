@@ -907,11 +907,7 @@ function getTodaysHours(){
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i].holiday_date);
                 if(holiday_date === today){
-                    if(hours[i].is_holiday_recurring_every_year){
-                        holiday_hours =  hours[i];
-                    }else if(holiday_date.format("YYYY") == today.format("YYYY")){
-                        holiday_hours =  hours[i];
-                    }
+                   holiday_hours =  hours[i];
                 }
             }    
             
