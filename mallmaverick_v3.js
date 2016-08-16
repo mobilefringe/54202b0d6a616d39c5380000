@@ -897,7 +897,7 @@ function getRegHoursForDayIndex(day_index){
 }
 
 function getTodaysHours(){
-    var time_zone = "US/Mountain"
+    var time_zone = "US/Mountain";
     var hours = getPropertyHours();
     var day_of_week_hours;
     var holiday_hours;
