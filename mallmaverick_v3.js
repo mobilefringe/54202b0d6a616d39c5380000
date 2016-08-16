@@ -906,7 +906,8 @@ function getTodaysHours(){
         if (hours[i].store_id === null){
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i].holiday_date);
-                if(holiday_date === today){
+                console.log(holiday_date)
+                if(holiday_date == today){
                    holiday_hours =  hours[i];
                 }
             }    
