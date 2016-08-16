@@ -906,7 +906,7 @@ function getTodaysHours(){
         if (hours[i].store_id === null){
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i]);
-                if(holiday_date.format("MMDD") == today.format("MMDD")){
+                if(holiday_date.format("MMDD") === today.format("MMDD")){
                     if(hours[i].is_holiday_recurring_every_year){
                         holiday_hours =  hours[i];
                     }else if(holiday_date.format("YYYY") == today.format("YYYY")){
