@@ -916,7 +916,6 @@ function getTodaysHours(){
             }    
             
             if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
-                
                 day_of_week_hours = hours[i];
             }
             
