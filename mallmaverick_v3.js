@@ -1,10 +1,10 @@
-
-	/*!
+/*!
  * v 0.3.1
  * mallmaverick.js - 
  * MobileFringe copywrite 2016
  * Use with api v3
- */
+ *
+*/
  
 var mallData = null;
 
