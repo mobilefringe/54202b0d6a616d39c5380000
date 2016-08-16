@@ -909,9 +909,7 @@ function getTodaysHours(){
                 if(holiday_date.format("MMDDYYYY") == today.format("MMDDYYYY")){
                    return hours[i];
                 }
-            }    
-            
-            if(!hours[i].is_holiday && hours[i].day_of_week == parseInt(today.format('d'))){
+            }else if(!hours[i].is_holiday && hours[i].day_of_week == parseInt(today.format('d'))){
                 return hours[i];
             }
             
