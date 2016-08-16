@@ -907,24 +907,18 @@ function getTodaysHours(){
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i].holiday_date);
                 if(holiday_date.format("MMDDYYYY") == today.format("MMDDYYYY")){
-                   holiday_hours =  hours[i];
+                   return hours[i];
                 }
             }    
             
             if(!hours[i].is_holiday && hours[i].day_of_week == parseInt(today.format('d'))){
-                day_of_week_hours = hours[i];
+                return hours[i];
             }
             
             
         }
         
     }
-    if (holiday_hours){
-        return holiday_hours;
-    } else {
-        return day_of_week_hours;
-    }
-    
 }
 
 
