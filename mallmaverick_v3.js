@@ -433,15 +433,16 @@ function getBlogDataBySlug(slug){
 
 function getAllPublishedPosts(){
     initData();
+    var time_zone = site_json.time_zone;
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blogs = mallDataJSON.blogs;
     var posts = [];
     $.each(blogs, function(key, val){
         var p = val.posts;
         $.each(p, function(i, v){
-            var publish_date = new Date(v.publish_date);
-            var today = new Date();
-            if (publish_date <= today){
+            var today = moment();
+            var publish_date = moment(val.show_on_web_date)
+            if (publish_date.tz(time_zone) <= today.tz(time_zone)){
                 posts.push(v); 
             }
         });
@@ -897,7 +898,7 @@ function getRegHoursForDayIndex(day_index){
 }
 
 function getTodaysHours(){
-    var time_zone = "US/Mountain";
+    var time_zone = site_json.time_zone;
     var hours = getPropertyHours();
     var day_of_week_hours;
     var holiday_hours;
