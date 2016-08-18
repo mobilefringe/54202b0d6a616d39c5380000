@@ -434,6 +434,7 @@ function getBlogDataBySlug(slug){
 function getAllPublishedPosts(){
     initData();
     var time_zone = site_json.time_zone;
+    console.log(time_zone)
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blogs = mallDataJSON.blogs;
     var posts = [];
