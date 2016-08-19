@@ -208,6 +208,12 @@ function getPNGMapURL(){
     return 'http://cdn.mallmaverick.com' + mallDataJSON.property.map_url;
 }
 
+function getPropertyTimeZone(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.property.timezone_moment;
+}
+
 function getStoresList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
