@@ -439,7 +439,7 @@ function getBlogDataBySlug(slug){
 
 function getAllPublishedPosts(){
     initData();
-    var time_zone = site_json.time_zone;
+    var time_zone = getPropertyTimeZone();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blogs = mallDataJSON.blogs;
     var posts = [];
@@ -904,7 +904,7 @@ function getRegHoursForDayIndex(day_index){
 }
 
 function getTodaysHours(){
-    var time_zone = site_json.time_zone;
+    var time_zone = getPropertyTimeZone();
     var hours = getPropertyHours();
     var day_of_week_hours;
     var holiday_hours;
