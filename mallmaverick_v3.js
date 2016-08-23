@@ -915,7 +915,7 @@ function getTodaysHours(){
         if (hours[i].store_id === null){
             
             if(hours[i].is_holiday){
-                var holiday_date = moment(hours[i].holiday_date.tz(time_zone));
+                var holiday_date = moment(hours[i].holiday_date).tz(time_zone));
                 if(holiday_date.format("MMDDYYYY") == today.format("MMDDYYYY")){
                    todays_hours = hours[i];
                 }
