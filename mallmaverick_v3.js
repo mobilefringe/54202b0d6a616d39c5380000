@@ -910,8 +910,9 @@ function getTodaysHours(){
     var holiday_hours;
     var today = moment().tz(time_zone);
     for (i = 0; i < hours.length; i++) {
+        console.log(hours[i])
         if (hours[i].store_id === null){
-            console.log(hours[i])
+            
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i].holiday_date.tz(time_zone));
                 console.log(holiday_date)
