@@ -447,7 +447,7 @@ function getAllPublishedPosts(){
         var p = val.posts;
         $.each(p, function(i, v){
             var today = moment();
-            var publish_date = moment(val.show_on_web_date)
+            var publish_date = moment(v.show_on_web_date)
             if (publish_date.tz(time_zone) <= today.tz(time_zone)){
                 posts.push(v); 
             }
