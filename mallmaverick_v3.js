@@ -925,8 +925,8 @@ function getTodaysHours(){
             
             
         }
-        
     }
+    return todays_hours;
 }
 
 
