@@ -924,7 +924,6 @@ function getTodaysHours(){
             
         }
     }
-    console.log(todays_hours)
     return todays_hours;
 }
 
