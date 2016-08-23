@@ -342,7 +342,7 @@ function renderTodaysHours(template_id,html_id){
         day_hours.is_closed_css = "display:none";
     }
     var now = moment();
-    var day = now.getDayName();
+    var day = now.format('MMM')
     day_hours.day_name = day;
     setLocaleDateFormats(day_hours);
     console.log(day_hours)
