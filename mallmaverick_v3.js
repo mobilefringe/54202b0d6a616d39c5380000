@@ -917,10 +917,10 @@ function getTodaysHours(){
             if(hours[i].is_holiday){
                 var holiday_date = moment(hours[i].holiday_date.tz(time_zone));
                 if(holiday_date.format("MMDDYYYY") == today.format("MMDDYYYY")){
-                   return hours[i];
+                   todays_hours = hours[i];
                 }
             }else if(!hours[i].is_holiday && hours[i].day_of_week == parseInt(today.format('d'))){
-                return hours[i];
+                todays_hours = hours[i];
             }
             
             
