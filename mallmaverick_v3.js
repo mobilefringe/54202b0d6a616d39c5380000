@@ -344,10 +344,10 @@ function showOnWeb(eventObj){
     var showDate = eventObj.show_on_web_date;
     
     var today = moment().tz(getPropertyTimeZone());
-    var webDate = moment(showDate)
+    var webDate = moment(showDate);
     
     
-    if (today.tz(getPropertyTimeZone()) >= webDate.tz(getPropertyTimeZone()) {
+    if (today.tz(getPropertyTimeZone()) >= webDate.tz(getPropertyTimeZone() ) {
        return true;
     } else {
         return false;
