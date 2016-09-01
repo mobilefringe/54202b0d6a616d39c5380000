@@ -342,20 +342,10 @@ function getStoresListByCategory(){
 
 function showOnWeb(eventObj){
     var showDate = eventObj.show_on_web_date;
-    var dateParts = showDate.split("-");
     
     var today = moment().tz(getPropertyTimeZone());
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
-    var yyyy = today.getFullYear();
+    var webDate = moment(showDate)
     
-    if(dd<10) {
-        dd='0'+dd
-    } 
-    
-    if(mm<10) {
-        mm='0'+mm
-    } 
     
     today = yyyy+'-'+ mm +'-'+ dd;
     if (today >= showDate){
