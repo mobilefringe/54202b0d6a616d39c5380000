@@ -347,8 +347,7 @@ function showOnWeb(eventObj){
     var webDate = moment(showDate)
     
     
-    today = yyyy+'-'+ mm +'-'+ dd;
-    if (today >= showDate){
+    if (today.tz(site_json.time_zone) >= webDate.tz(site_json.time_zone)) {
        return true;
     } else {
         return false;
