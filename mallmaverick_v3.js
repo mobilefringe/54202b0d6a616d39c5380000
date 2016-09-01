@@ -347,7 +347,7 @@ function showOnWeb(eventObj){
     var webDate = moment(showDate)
     
     
-    if (today.tz(site_json.time_zone) >= webDate.tz(site_json.time_zone)) {
+    if (today.tz(getPropertyTimeZone()) >= webDate.tz(getPropertyTimeZone()) {
        return true;
     } else {
         return false;
