@@ -98,6 +98,7 @@ function renderPromotionsListTemplate(template_id,template_id_no_image,html_id,n
          webDate = new Date(val.show_on_web_date)
          if (today >= webDate) {
             localizeObject(val);
+            console.log(val)
             var promotionable_name = "";
             var promotionable_url = "";
             if(val['promotionable_type'] == 'Store' && showOnWeb(val)){
