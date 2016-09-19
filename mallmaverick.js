@@ -154,9 +154,7 @@ function getRequestParam(name){
 }
 
 function localizeObject(mm_object){
-    console.log(sessionStorage.current_locale)
-    console.log(sessionStorage.secondary_locale)
-    if(sessionStorage.current_locale == sessionStorage.secondary_locale){
+    if(sessionStorage.current_locale == sessionStorage.primary_locale){
         if(mm_object !== null && typeof(mm_object) != 'undefined'){
             if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
                 mm_object.name = mm_object.name_2;
