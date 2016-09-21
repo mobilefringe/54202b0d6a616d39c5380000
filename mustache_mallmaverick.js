@@ -280,7 +280,7 @@ function renderPromotionDetailsTemplate(template_id,html_id,promotion_details){
         val.description_short = val.description.substring(0,50) + "...";
     }
     if(val.description_2.length > 50){
-        val.description_short_2 = val.description.substring(0,50) + "...";
+        val.description_short_2 = val.description_2.substring(0,50) + "...";
     }
     localizeObject(promotion_details);
     promotion_details.promo_image_url = getImageURL(promotion_details.promo_image_url);
