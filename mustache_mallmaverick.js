@@ -276,6 +276,12 @@ function renderStoreDetailsTemplate(template_id,html_id,store_details){
 function renderPromotionDetailsTemplate(template_id,html_id,promotion_details){
     var template_html = $(template_id).html();
     Mustache.parse(template_html);   // optional, speeds up future uses
+    if(val.description.length > 50){
+        val.description_short = val.description.substring(0,50) + "...";
+    }
+    if(val.description_2.length > 50){
+        val.description_short_2 = val.description.substring(0,50) + "...";
+    }
     localizeObject(promotion_details);
     promotion_details.promo_image_url = getImageURL(promotion_details.promo_image_url);
     promotion_details.promo_image_url_abs = getAbsoluteImageURL(promotion_details.promo_image_url_abs);
