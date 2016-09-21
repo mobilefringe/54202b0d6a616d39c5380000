@@ -291,6 +291,7 @@ function renderPromotionDetailsTemplate(template_id,html_id,promotion_details){
     }
     
     localizeObject(promotion_details);
+    console.log(promotion_details)
     promotion_details.promo_image_url = getImageURL(promotion_details.promo_image_url);
     promotion_details.promo_image_url_abs = getAbsoluteImageURL(promotion_details.promo_image_url_abs);
     if(promotion_details.promotionable_type == 'Store'){
