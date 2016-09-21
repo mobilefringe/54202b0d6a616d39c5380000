@@ -163,7 +163,7 @@ function localizeObject(mm_object){
             if(mm_object.description_2 !== null && typeof(mm_object.description_2) != 'undefined' && mm_object.description_2.length > 0){
                 mm_object.description = mm_object.description_2;
             }
-             if(mm_object.description_short_2 !== null && typeof(mm_object.description_short_2) != 'undefined' && mm_object.description_short_2.length > 0){
+            if(mm_object.description_short_2 !== null && typeof(mm_object.description_short_2) != 'undefined' && mm_object.description_short_2.length > 0){
                 mm_object.description_short = mm_object.description_short_2;
             }
             
