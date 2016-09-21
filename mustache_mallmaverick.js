@@ -241,14 +241,14 @@ function renderEventsListTemplate(template_id,template_id_no_image,html_id,not_e
     Mustache.parse(template_html_no_image);
     
     $.each( events , function( key, val ) {
-        if(val.description.length > 50){
-            val.description_short = val.description.substring(0,50) + "...";
+        if(val.description.length > 200){
+            val.description_short = val.description.substring(0,200) + "...";
         }
         else{
             val.description_short = val.description;
         }
-        if(val.description_2.length > 50){
-            val.description_short_2 = val.description_2.substring(0,50) + "...";
+        if(val.description_2.length > 200){
+            val.description_short_2 = val.description_2.substring(0,200) + "...";
         }
         else{
             val.description_short_2 = val.description_2;
