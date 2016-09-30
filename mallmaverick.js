@@ -993,6 +993,7 @@ function setLocaleDateFormats(hours){
     }
     
     close_time_hour = close_time.getUTCHours();
+    console.log(close_time_huor)
     var close_time_hour_fr = close_time_hour;
     
     var close_time_period = "AM";
