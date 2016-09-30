@@ -1007,7 +1007,7 @@ function setLocaleDateFormats(hours){
     open_time_min = open_time.getUTCMinutes();
     var open_time_min_fr = open_time_min;
     if(open_time_min === 0){
-        open_time_min = "00";
+        open_time_min = "12";
         open_time_min_fr = "";
     }
     
@@ -1015,7 +1015,7 @@ function setLocaleDateFormats(hours){
     close_time_min = close_time.getUTCMinutes();
     var close_time_min_fr = close_time_min;
     if(close_time_min === 0){
-        close_time_min = "00";
+        close_time_min = "12";
         close_time_min_fr = "";
     }
     
