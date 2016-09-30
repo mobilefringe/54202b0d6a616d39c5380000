@@ -200,13 +200,13 @@ function localizeObject(mm_object){
 function getSVGMapURL(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.svgmap_url;
+    return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
 }
 
 function getPNGMapURL(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.map_url;
+    return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.map_url;
 }
 
 function getStoresList(){
