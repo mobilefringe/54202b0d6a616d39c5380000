@@ -369,7 +369,7 @@ function getImageURLStaging(existing_url){
         return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
         
     }
-    return "http://cdn.mallmaverickstaging.com"+existing_url;
+    return "https://mallmaverick.cdn.speedyrails.net"+existing_url;
 }
 
 function getAbsoluteImageURL(existing_url){
