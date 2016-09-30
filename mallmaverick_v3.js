@@ -634,7 +634,7 @@ function getFeatureList(){
 
 
 function getMallMaverickImgUrl(url){
-    var MallMaverickUrl = "http://cdn.mallmaverick.com" + url;
+    var MallMaverickUrl = "https://mallmaverick.cdn.speedyrails.net" + url;
     return MallMaverickUrl;
 }
 
