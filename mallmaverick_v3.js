@@ -199,13 +199,13 @@ function localizeObject(mm_object){
 function getSVGMapURL(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.svgmap_url;
+    return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
 }
 
 function getPNGMapURL(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.map_url;
+    return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.map_url;
 }
 
 function getPropertyTimeZone(){
@@ -360,7 +360,7 @@ function getImageURL(existing_url){
         return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
         
     }
-    return "http://cdn.mallmaverick.com"+existing_url;
+    return "https://mallmaverick.cdn.speedyrails.net"+existing_url;
 }
 
 function getImageURLStaging(existing_url){
