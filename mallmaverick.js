@@ -992,7 +992,7 @@ function setLocaleDateFormats(hours){
         open_time_hour = 12;
     }
     
-    close_time_hour = close_time.getUTCHours();)
+    close_time_hour = close_time.getUTCHours();
     var close_time_hour_fr = close_time_hour;
     
     var close_time_period = "AM";
