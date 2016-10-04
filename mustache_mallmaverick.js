@@ -97,6 +97,18 @@ function renderPromotionsListTemplate(template_id,template_id_no_image,html_id,n
         today = new Date();
          webDate = new Date(val.show_on_web_date)
          if (today >= webDate) {
+            if(val.description.length > 300){
+                val.description_short = val.description.substring(0,300) + "...";
+            }
+            else{
+                val.description_short = val.description;
+            }
+            if(val.description_2.length > 300){
+                val.description_short_2 = val.description_2.substring(0,300) + "...";
+            }
+            else{
+                val.description_short_2 = val.description_2;
+            }
             localizeObject(val);
             
             var promotionable_name = "";
