@@ -58,7 +58,12 @@ function loadMallData(callback){
         log('fetching mallData from: '+getStorage().MM_URL);
         $.getJSON(getStorage().MM_URL).done(function(data) {
             mallData = data;
-            getStorage().setItem('mallData', JSON.stringify(data));
+            try {
+                getStorage().setItem('mallData', JSON.stringify(data));
+            }catch(e){
+                getStorage().setItem('mallData', JSON.stringify(data));
+            }
+            
             log('done fetching mallData from: '+getStorage().MM_URL);
             callback();
         });
