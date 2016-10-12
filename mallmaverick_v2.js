@@ -30,9 +30,9 @@ function setSocialEndPoint(url){
 
 function getStorage(){
     try {
-        sessionStorage.getItem('MM_URL');
+        return sessionStorage;
     }catch(e){
-        siteStorage.MM_URL = url
+        return siteStorage;
     }
 }
 
