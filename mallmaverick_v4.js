@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 function setEndPoint(url){
     sessionStorage.setItem('MM_URL', url);
+    siteStorage.MM_URL = url
     
 }
 
