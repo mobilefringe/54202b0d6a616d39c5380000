@@ -1,9 +1,9 @@
 /*!
- * v 0.3.1
+ * v 0.4
  * mallmaverick.js - 
  * MobileFringe copywrite 2016
  * Use with api v3
- *
+ * added support when sessionStorage is not available
 */
  
 var mallData = null;
