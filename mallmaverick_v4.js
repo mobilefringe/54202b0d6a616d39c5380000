@@ -1,8 +1,7 @@
 /*!
- * v 0.4
+ * v 2
  * mallmaverick.js - 
  * MobileFringe copywrite 2016
- * Use with api v3
  * Added support for when sessionStorage is not available
 */
  
@@ -15,6 +14,7 @@ $(document).ready(function() {
 
 
 function setEndPoint(url){
+    if sessionStorage
     sessionStorage.setItem('MM_URL', url);
     siteStorage.MM_URL = url
     
