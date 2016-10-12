@@ -16,7 +16,7 @@ function setEndPoint(url){
     try {
         sessionStorage.setItem('MM_URL', url);
     }catch(e){
-        console.log(e)
+        siteStorage.MM_URL = url
     }
 }
 
