@@ -6,14 +6,18 @@
 */
 
 var mallData = null;
-
+var siteStorage = {};
 $(document).ready(function() {
   $.ajaxSetup({ cache: false });
 }); 
 
 
 function setEndPoint(url){
-    sessionStorage.setItem('MM_URL', url);
+    try {
+        sessionStorage.setItem('MM_URL', url);
+    }catch(e){
+        console.log(e)
+    }
 }
 
 function setSocialEndPoint(url){
