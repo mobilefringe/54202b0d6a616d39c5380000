@@ -21,7 +21,11 @@ function setEndPoint(url){
 }
 
 function setSocialEndPoint(url){
-    sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
+    try {
+        sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
+    }catch(e){
+        console.log(e)
+    }
 }
 
 
