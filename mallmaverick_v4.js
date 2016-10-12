@@ -7,7 +7,7 @@
 */
  
 var mallData = null;
-var siteStorage = null;
+var siteStorage = {};
 
 $(document).ready(function() {
   $.ajaxSetup({ cache: false });
@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 function setEndPoint(url){
     sessionStorage.setItem('MM_URL', url);
+    
 }
 
 function setSocialEndPoint(url){
