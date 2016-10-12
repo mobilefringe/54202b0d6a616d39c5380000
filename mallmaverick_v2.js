@@ -24,7 +24,7 @@ function setSocialEndPoint(url){
     try {
         sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
     }catch(e){
-        console.log(e)
+        siteStorage.MM_URL = url
     }
 }
 
