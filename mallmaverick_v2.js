@@ -28,6 +28,14 @@ function setSocialEndPoint(url){
     }
 }
 
+function getStorage(){
+    try {
+        sessionStorage.setItem('MM_URL', url);
+    }catch(e){
+        siteStorage.MM_URL = url
+    }
+}
+
 
 function get_prefix(){
     var main_url = (sessionStorage.MM_URL).split('/');
