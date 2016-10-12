@@ -55,11 +55,11 @@ function loadMallData(callback){
         log(JSON.stringify(JSON.stringify(data)));
     }
     if(true){//typeof(sessionStorage.mallData) == 'undefined'){
-        log('fetching mallData from: '+sessionStorage.MM_URL);
-        $.getJSON(sessionStorage.MM_URL).done(function(data) {
+        log('fetching mallData from: '+getStorage().MM_URL);
+        $.getJSON(getStorage().MM_URL).done(function(data) {
             mallData = data;
-            sessionStorage.setItem('mallData', JSON.stringify(data));
-            log('done fetching mallData from: '+sessionStorage.MM_URL);
+            getStorage().setItem('mallData', JSON.stringify(data));
+            log('done fetching mallData from: '+getStorage().MM_URL);
             callback();
         });
     }else{
@@ -74,12 +74,12 @@ function loadMallDataCached(callback){
         log("hey I have some mall data already!");
         log(JSON.stringify(JSON.stringify(data)));
     }
-    if(typeof(sessionStorage.mallData) == 'undefined'){
-        log('fetching mallData from: '+sessionStorage.MM_URL);
-        $.getJSON(sessionStorage.MM_URL).done(function(data) {
+    if(typeof(getStorage().mallData) == 'undefined'){
+        log('fetching mallData from: '+getStorage().MM_URL);
+        $.getJSON(getStorage().MM_URL).done(function(data) {
             mallData = data;
-            sessionStorage.setItem('mallData', JSON.stringify(data));
-            log('done fetching mallData from: '+sessionStorage.MM_URL);
+            getStorage().setItem('mallData', JSON.stringify(data));
+            log('done fetching mallData from: '+getStorage().MM_URL);
             callback();
         });
     }else{
@@ -120,11 +120,11 @@ function get_instagram(url,total, size, callback){
 
 
 function loadSocialFeeds(callback){
-    log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
-    $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
+    log('fetching mallData from: '+getStorage().MM_SOCIAL_FEED_URL);
+    $.getJSON(getStorage().MM_SOCIAL_FEED_URL).done(function(data) {
         mallSocialData = data;
-        sessionStorage.setItem('mallSocialData', JSON.stringify(data));
-        log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
+        getStorage().setItem('mallSocialData', JSON.stringify(data));
+        log('done fetching  mallSocialData from: '+ getStorage().MM_SOCIAL_FEED_URL);
             callback();
     });
 }
@@ -157,7 +157,7 @@ function imagesLoadedEvent(selector, callback) {
 
 
 function isMallDataLoaded(){
-    if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
+    if(getStorage().mallData && typeof(getStorage().mallData) != 'undefined'){
         return true;
     }
     return false;
@@ -170,7 +170,7 @@ function getRequestParam(name){
 }
 
 function localizeObject(mm_object){
-    if(sessionStorage.current_locale == sessionStorage.primary_locale){
+    if(getStorage().current_locale == getStorage().primary_locale){
         if(mm_object !== null && typeof(mm_object) != 'undefined'){
             if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
                 mm_object.name = mm_object.name_2;
@@ -215,19 +215,19 @@ function localizeObject(mm_object){
 
 function getSVGMapURL(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
 }
 
 function getPNGMapURL(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.map_url;
 }
 
 function getStoresList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.stores;
 }
 
@@ -255,7 +255,7 @@ function getComingSoonList(){
 
 function getBanners(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.banners;
 }
 
@@ -267,7 +267,7 @@ function getMobileBanners(){
 
 function getFashions(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.fashions;
 }
 
@@ -279,14 +279,14 @@ function getFashionBySlug(slug){
 
 function getPopups(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.popups;
 }
 
 
 function get_meta(path){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     meta = []
     metas = mallDataJSON.meta_data;
     for ( i = 0; i < metas.length; i++){
@@ -413,7 +413,7 @@ function hasImage(image_url){
 function getBlogByName(folderName){
     
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var folder = [];
   
     $.each( mallDataJSON.blogs, function( index,  value) {
@@ -426,13 +426,13 @@ function getBlogByName(folderName){
 
 function getBlogList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.blogs;
 }
 
 function getBlogDataBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
     var posts = [];
     if(blog.posts.length > 0){
@@ -450,7 +450,7 @@ function getBlogDataBySlug(slug){
 
 function getAllPublishedPosts(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var blogs = mallDataJSON.blogs;
     var posts = [];
     $.each(blogs, function(key, val){
@@ -500,12 +500,12 @@ function getBlogDetailByName(slug, folderName){
 
 function getPostList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.blogs[0].posts;
 }
 function getPostDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 
@@ -586,51 +586,51 @@ function getNextPostBySlug(slug){
 
 function getPromotionsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.promotions;
 }
 
 function getSocialFeed(){
-    var mallSocialData = JSON.parse(sessionStorage.mallSocialData);
+    var mallSocialData = JSON.parse(getStorage().mallSocialData);
     return mallSocialData.social;
 }
 
 
 function getContestList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.contests;
 }
 
 
 function getContestBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.contests,'slug',slug)[0];
 }
 
 
 function getPromotionDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.promotions,'slug',slug)[0];
 }
 
 function getEventDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.events,'slug',slug)[0];
 }
 
 function getRepoList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.repos;
 }
 
 function getRepoDetailsByName(name){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.repos,'name',name)[0];
 }
 function getAssetBySlug(slug){
@@ -649,7 +649,7 @@ function getAssetBySlug(slug){
 
 function getFeatureList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.feature_items;
 }
 
@@ -739,26 +739,26 @@ function sortByStoreName(a, b){
 
 function getJobsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.jobs;
 }
 
 
 function getJobDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.jobs,'slug',slug)[0];
 }
 
 function getEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.events;
 }
 
 function getPropertyEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var events = mallDataJSON.events;
     var property_events = []
     $.each(events, function(index, value){
@@ -771,7 +771,7 @@ function getPropertyEventsList(){
 
 function getStoreEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var events = mallDataJSON.events;
     var store_events = []
     $.each(events, function(index, value){
@@ -784,13 +784,13 @@ function getStoreEventsList(){
 
 function getStoreDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.stores,'slug',slug)[0];
 }
 
 function getStoreDetailsByID(store_id){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.stores,'id',store_id)[0];
 }
 
@@ -805,19 +805,19 @@ function getStoreDetailArrayByIDs(collection){
 
 function getStoreCategories(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.categories;
 }
 
 function getPropertyDetails(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.property;
 }
 
 function getCategoryDetails(category_id){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.categories,'id',category_id)[0];
 }
 
@@ -901,7 +901,7 @@ function getPropertyID(){
 
 function getPropertyHours(){
     
-    return JSON.parse(sessionStorage.mallData).hours;
+    return JSON.parse(getStorage().mallData).hours;
 }
 
 function getRegHoursForDayIndex(day_index){
