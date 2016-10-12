@@ -30,7 +30,7 @@ function setSocialEndPoint(url){
 
 function getStorage(){
     try {
-        sessionStorage.getItem('MM_URL', url);
+        sessionStorage.getItem('MM_URL');
     }catch(e){
         siteStorage.MM_URL = url
     }
