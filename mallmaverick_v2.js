@@ -132,7 +132,11 @@ function loadSocialFeeds(callback){
     log('fetching mallData from: '+getStorage().MM_SOCIAL_FEED_URL);
     $.getJSON(getStorage().MM_SOCIAL_FEED_URL).done(function(data) {
         mallSocialData = data;
-        getStorage().setItem('mallSocialData', JSON.stringify(data));
+        try {
+            getStorage().setItem('mallSocialData', JSON.stringify(data));
+        }catch(e){
+            getStorage().mallSocialData = JSON.stringify(data);
+        }
         log('done fetching  mallSocialData from: '+ getStorage().MM_SOCIAL_FEED_URL);
             callback();
     });
