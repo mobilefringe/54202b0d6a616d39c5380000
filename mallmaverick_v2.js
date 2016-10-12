@@ -32,7 +32,7 @@ function getStorage(){
     try {
         return sessionStorage;
     }catch(e){
-        return "siteStorage"he"";
+        return "siteStorage";
     }
 }
 
