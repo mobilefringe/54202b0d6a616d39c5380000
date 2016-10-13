@@ -29,16 +29,13 @@ function setSocialEndPoint(url){
 }
 
 function getStorage(){
-    var return_storage = siteStorage;
     try {
          if(sessionStorage != null){
-             return_storage = sessionStorage;
+            return sessionStorage
          }
     }catch(e){
-        return_storage =  siteStorage;
+        return siteStorage;
     }
-    
-    return return_storage
 }
 
 
