@@ -29,7 +29,7 @@ function setSocialEndPoint(url){
 }
 
 function getStorage(){
-    var return_storage = siteStorage;
+    var return_storage = sessionStorage;
     try {
         
          if(sessionStorage == null || sessionStorage.MM_URL == undefined){
