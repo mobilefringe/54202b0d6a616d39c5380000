@@ -31,7 +31,7 @@ function setSocialEndPoint(url){
 function getStorage(){
     var return_storage = siteStorage;
     try {
-         if(sessionStorage != null){
+         if(sessionStorage != null || sessionStorage != undefined){
              return_storage = sessionStorage
          }
     }catch(e){
