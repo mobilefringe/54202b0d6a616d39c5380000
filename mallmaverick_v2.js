@@ -35,7 +35,7 @@ function getStorage(){
              return_storage = sessionStorage;
          }
     }catch(e){
-        return siteStorage;
+        return_storage =  siteStorage;
     }
     
     return return_storage
