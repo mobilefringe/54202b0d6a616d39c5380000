@@ -37,6 +37,7 @@ function getStorage(){
     }catch(e){
         return siteStorage;
     }
+    return return_storage
 }
 
 
