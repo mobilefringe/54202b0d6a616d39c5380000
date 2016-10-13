@@ -31,7 +31,6 @@ function setSocialEndPoint(url){
 function getStorage(){
     var return_storage = sessionStorage;
     try {
-        
          if(sessionStorage == null || sessionStorage.MM_URL == undefined){
              throw "sessionStorage unavailable"
          }
