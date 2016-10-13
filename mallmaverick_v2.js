@@ -80,6 +80,7 @@ function loadMallDataCached(callback){
         log("hey I have some mall data already!");
         log(JSON.stringify(JSON.stringify(data)));
     }
+    log(typeof(getStorage().mallData))
     if(typeof(getStorage().mallData) == 'undefined'){
         log('fetching mallData from: '+getStorage().MM_URL);
         $.getJSON(getStorage().MM_URL).done(function(data) {
