@@ -29,7 +29,11 @@ function setSocialEndPoint(url){
 }
 
 function getStorage(){
-    
+    try {
+        return sessionStorage;
+    }catch(e){
+        return siteStorage;
+    }
 }
 
 
