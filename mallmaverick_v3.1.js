@@ -44,7 +44,7 @@ function getStorage(){
 }
 
 function get_prefix(){
-    var main_url = (sessionStorage.MM_URL).split('/');
+    var main_url = (getStorage().MM_URL).split('/');
     var page_prefix = main_url[0]+'//'+main_url[2]
     return page_prefix;
 }
@@ -234,25 +234,25 @@ function localizeObject(mm_object){
 
 function getSVGMapURL(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
 }
 
 function getPNGMapURL(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.map_url;
 }
 
 function getPropertyTimeZone(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.property.timezone_moment;
 }
 
 function getStoresList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.stores;
 }
 
@@ -280,7 +280,7 @@ function getComingSoonList(){
 
 function getBanners(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.banners;
 }
 
@@ -292,7 +292,7 @@ function getMobileBanners(){
 
 function getFashions(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.fashions;
 }
 
@@ -304,14 +304,14 @@ function getFashionBySlug(slug){
 
 function getPopups(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.popups;
 }
 
 
 function get_meta(path){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     meta = []
     metas = mallDataJSON.meta_data;
     for ( i = 0; i < metas.length; i++){
@@ -427,7 +427,7 @@ function hasImage(image_url){
 function getBlogByName(folderName){
     
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var folder = [];
   
     $.each( mallDataJSON.blogs, function( index,  value) {
@@ -440,13 +440,13 @@ function getBlogByName(folderName){
 
 function getBlogList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.blogs;
 }
 
 function getBlogDataBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
     var posts = [];
     if(blog.posts.length > 0){
@@ -465,7 +465,7 @@ function getBlogDataBySlug(slug){
 function getAllPublishedPosts(){
     initData();
     var time_zone = getPropertyTimeZone();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var blogs = mallDataJSON.blogs;
     var posts = [];
     $.each(blogs, function(key, val){
@@ -515,12 +515,12 @@ function getBlogDetailByName(slug, folderName){
 
 function getPostList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.blogs[0].posts;
 }
 function getPostDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 
@@ -601,51 +601,51 @@ function getNextPostBySlug(slug){
 
 function getPromotionsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.promotions;
 }
 
 function getSocialFeed(){
-    var mallSocialData = JSON.parse(sessionStorage.mallSocialData);
+    var mallSocialData = JSON.parse(getStorage().mallSocialData);
     return mallSocialData.social;
 }
 
 
 function getContestList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.contests;
 }
 
 
 function getContestBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.contests,'slug',slug)[0];
 }
 
 
 function getPromotionDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.promotions,'slug',slug)[0];
 }
 
 function getEventDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.events,'slug',slug)[0];
 }
 
 function getRepoList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.repos;
 }
 
 function getRepoDetailsByName(name){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.repos,'name',name)[0];
 }
 function getAssetBySlug(slug){
@@ -664,7 +664,7 @@ function getAssetBySlug(slug){
 
 function getFeatureList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.feature_items;
 }
 
@@ -754,26 +754,26 @@ function sortByStoreName(a, b){
 
 function getJobsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.jobs;
 }
 
 
 function getJobDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.jobs,'slug',slug)[0];
 }
 
 function getEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.events;
 }
 
 function getPropertyEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var events = mallDataJSON.events;
     var property_events = []
     $.each(events, function(index, value){
@@ -786,7 +786,7 @@ function getPropertyEventsList(){
 
 function getStoreEventsList(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     var events = mallDataJSON.events;
     var store_events = []
     $.each(events, function(index, value){
@@ -799,13 +799,13 @@ function getStoreEventsList(){
 
 function getStoreDetailsBySlug(slug){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.stores,'slug',slug)[0];
 }
 
 function getStoreDetailsByID(store_id){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.stores,'id',store_id)[0];
 }
 
@@ -820,19 +820,19 @@ function getStoreDetailArrayByIDs(collection){
 
 function getStoreCategories(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.categories;
 }
 
 function getPropertyDetails(){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return mallDataJSON.property;
 }
 
 function getCategoryDetails(category_id){
     initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.categories,'id',category_id)[0];
 }
 
@@ -916,7 +916,7 @@ function getPropertyID(){
 
 function getPropertyHours(){
     
-    return JSON.parse(sessionStorage.mallData).hours;
+    return JSON.parse(getStorage().mallData).hours;
 }
 
 function getRegHoursForDayIndex(day_index){
