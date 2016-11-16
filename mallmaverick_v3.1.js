@@ -16,11 +16,19 @@ $(document).ready(function() {
 
 
 function setEndPoint(url){
-    sessionStorage.setItem('MM_URL', url);
+    try {
+        sessionStorage.setItem('MM_URL', url);
+    }catch(e){
+        siteStorage.MM_URL = url
+    }
 }
 
 function setSocialEndPoint(url){
-    sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
+    try {
+        sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
+    }catch(e){
+        siteStorage.MM_SOCIAL_FEED_URL = url
+    }
 }
 
 function getStorage(){
