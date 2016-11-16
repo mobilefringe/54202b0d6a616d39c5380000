@@ -177,7 +177,7 @@ function imagesLoadedEvent(selector, callback) {
 
 
 function isMallDataLoaded(){
-    if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
+    if(getStorage().mallData && typeof(getStorage().mallData) != 'undefined'){
         return true;
     }
     return false;
