@@ -22,6 +22,17 @@ function setSocialEndPoint(url){
     sessionStorage.setItem('MM_SOCIAL_FEED_URL', url);
 }
 
+function getStorage(){
+    try {
+        var return_storage = sessionStorage;
+         if(sessionStorage == null || sessionStorage.MM_URL == undefined){
+             throw "sessionStorage unavailable"
+         }
+    }catch(e){
+        return siteStorage;
+    }
+    return return_storage
+}
 
 function get_prefix(){
     var main_url = (sessionStorage.MM_URL).split('/');
