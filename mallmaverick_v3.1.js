@@ -3,6 +3,7 @@
  * mallmaverick.js - 
  * MobileFringe copywrite 2016
  * Use with api v3
+ * Added support for when sessionStorage is not available
  *
 */
  
