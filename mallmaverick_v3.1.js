@@ -189,8 +189,7 @@ function getRequestParam(name){
 }
 
 function localizeObject(mm_object){
-
-    if(sessionStorage.current_locale == sessionStorage.secondary_locale){
+    if(getStorage().current_locale == getStorage().primary_locale){
         if(mm_object !== null && typeof(mm_object) != 'undefined'){
             if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
                 mm_object.name = mm_object.name_2;
@@ -198,6 +197,9 @@ function localizeObject(mm_object){
             }
             if(mm_object.description_2 !== null && typeof(mm_object.description_2) != 'undefined' && mm_object.description_2.length > 0){
                 mm_object.description = mm_object.description_2;
+            }
+            if(mm_object.description_short_2 !== null && typeof(mm_object.description_short_2) != 'undefined' && mm_object.description_short_2.length > 0){
+                mm_object.description_short = mm_object.description_short_2;
             }
             
             if(mm_object.rich_description_2 !== null && typeof(mm_object.rich_description_2) != 'undefined' && mm_object.rich_description_2.length > 0){
