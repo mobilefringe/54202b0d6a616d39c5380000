@@ -8,6 +8,7 @@
 */
  
 var mallData = null;
+var siteStorage = {};
 
 $(document).ready(function() {
   $.ajaxSetup({ cache: false });
