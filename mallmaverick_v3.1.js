@@ -135,14 +135,19 @@ function get_instagram(url,total, size, callback){
 
 
 function loadSocialFeeds(callback){
-    log('fetching mallData from: '+sessionStorage.MM_SOCIAL_FEED_URL);
-    $.getJSON(sessionStorage.MM_SOCIAL_FEED_URL).done(function(data) {
+    log('fetching mallData from: '+getStorage().MM_SOCIAL_FEED_URL);
+    $.getJSON(getStorage().MM_SOCIAL_FEED_URL).done(function(data) {
         mallSocialData = data;
-        sessionStorage.setItem('mallSocialData', JSON.stringify(data));
-        log('done fetching  mallSocialData from: '+ sessionStorage.MM_SOCIAL_FEED_URL);
+        try {
+            getStorage().setItem('mallSocialData', JSON.stringify(data));
+        }catch(e){
+            getStorage().mallSocialData = JSON.stringify(data);
+        }
+        log('done fetching  mallSocialData from: '+ getStorage().MM_SOCIAL_FEED_URL);
             callback();
     });
 }
+
 
 //Call a function after matching images have finished loading
 function imagesLoadedEvent(selector, callback) {
