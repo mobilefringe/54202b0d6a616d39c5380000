@@ -181,7 +181,6 @@ function isMallDataLoaded(){
         return true;
     }
     return false;
-    
 }
 
 function getRequestParam(name){
