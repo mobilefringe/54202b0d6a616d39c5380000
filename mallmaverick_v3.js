@@ -42,6 +42,7 @@ function loadMallData(callback){
     if(true){//typeof(sessionStorage.mallData) == 'undefined'){
         log('fetching mallData from: '+sessionStorage.MM_URL);
         $.getJSON(sessionStorage.MM_URL).done(function(data) {
+            log(data)
             mallData = data;
             sessionStorage.setItem('mallData', JSON.stringify(data));
             log('done fetching mallData from: '+sessionStorage.MM_URL);
