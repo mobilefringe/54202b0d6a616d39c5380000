@@ -388,7 +388,7 @@ function getCloudinaryImageUrl(existing_url) {
         
     }
     
-    return sessionStorage.MM_URL + existing_url;
+    return sessionStorage.MM_URL.match(/(.*\.com)/)[1] + existing_url;
 }
 
 function hasImage(image_url){
