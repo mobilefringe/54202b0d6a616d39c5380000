@@ -381,6 +381,16 @@ function getAbsoluteImageURL(existing_url){
     return existing_url;
 }
 
+function getCloudinaryImageUrl(path) {
+    if(!existing_url ||  existing_url.indexOf('missing.png') > -1 || existing_url.length === 0){
+        //http://css-tricks.com/snippets/html/base64-encode-of-1x1px-transparent-gif/
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        
+    }
+    
+    return sessionStorage.MM_URL + existing_url;
+}
+
 function hasImage(image_url){
     if(!image_url ||  image_url.indexOf('missing.png') > -1 || image_url.length === 0){
         return false;
