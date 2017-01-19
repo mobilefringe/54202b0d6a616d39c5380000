@@ -125,7 +125,7 @@ function renderPromotionsListTemplate(template_id,template_id_no_image,html_id,n
             
     
             if(hasImage(val.promo_image_url)){
-                val.promo_image_url = getImageURL(val.promo_image_url);
+                val.promo_image_url = getCloudinaryImageUrl(val.promo_image_url);
                 val.promo_image_url_abs = getAbsoluteImageURL(val.promo_image_url_abs);
                 var rendered = Mustache.render(template_html,val);
                 item_list.push(rendered);
@@ -301,7 +301,7 @@ function renderPromotionDetailsTemplate(template_id,html_id,promotion_details){
     var template_html = $(template_id).html();
     Mustache.parse(template_html);   // optional, speeds up future uses
     localizeObject(promotion_details);
-    promotion_details.promo_image_url = getImageURL(promotion_details.promo_image_url);
+    promotion_details.promo_image_url = getCloudinaryImageUrl(promotion_details.promo_image_url);
     promotion_details.promo_image_url_abs = getAbsoluteImageURL(promotion_details.promo_image_url_abs);
     if(promotion_details.promotionable_type == 'Store'){
             var store_details = getStoreDetailsByID(promotion_details.promotionable_id);
