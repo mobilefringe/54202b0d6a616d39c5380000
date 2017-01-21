@@ -391,6 +391,10 @@ function getCloudinaryImageUrl(existing_url) {
     return sessionStorage.MM_URL.match(/(.*\.com)/)[1] + existing_url;
 }
 
+function getCloudinaryImageURL(existing_url) {
+    return getCloudinaryImageUrl(existing_url);
+}
+
 function hasImage(image_url){
     if(!image_url ||  image_url.indexOf('missing.png') > -1 || image_url.length === 0){
         return false;
