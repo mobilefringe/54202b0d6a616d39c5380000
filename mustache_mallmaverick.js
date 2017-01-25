@@ -84,6 +84,20 @@ function renderStoresByCategoriesListTemplate(header_template_id,item_template_i
     }
 } 
 
+function getCloudinaryImageUrl(existing_url) {
+    if(!existing_url ||  existing_url.indexOf('missing.png') > -1 || existing_url.length === 0){
+        //http://css-tricks.com/snippets/html/base64-encode-of-1x1px-transparent-gif/
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        
+    }
+    
+    return sessionStorage.MM_URL.match(/(.*\.com)/)[1] + existing_url;
+}
+
+function getCloudinaryImageURL(existing_url) {
+    return getCloudinaryImageUrl(existing_url);
+}
+
 
 function renderPromotionsListTemplate(template_id,template_id_no_image,html_id,not_empty_section_id,empty_section_id,promotions){
     var item_list = [];
