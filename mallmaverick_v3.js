@@ -37,7 +37,7 @@ function log(str){
 function loadMallData(callback){
     if (mallData != null){
         log("hey I have some mall data already!");
-        log(JSON.stringify(JSON.stringify(data)));
+        log(JSON.stringify(JSON.stringify(mallData)));
     }
     if(true){//typeof(sessionStorage.mallData) == 'undefined'){
         log('fetching mallData from: '+sessionStorage.MM_URL);
