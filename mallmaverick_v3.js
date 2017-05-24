@@ -1054,7 +1054,7 @@ function getSearchResults(search_string,max_results,trim_description_length){
         if(store_ids.indexOf(val.id) == -1){
             var tags_string = val.tags.join();
             var keywords_string  = val.keywords.join();
-            if(search_string.length >= 3 && (tags_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1 || keywords_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1)){
+            if(search_string.length >= 2 && (tags_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1 || keywords_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1)){
                 val.description_trim = val.description.substring(0, trim_description_length) + "..";
                 stores.push(val);
                 store_ids.push(val.id);
