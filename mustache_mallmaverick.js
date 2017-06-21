@@ -382,7 +382,7 @@ function renderTodaysHours(template_id,html_id){
     var day = now.getDayName();
     day_hours.day_name = day;
     setLocaleDateFormats(day_hours);
-    console.log(day_hours)
+    // console.log(day_hours)
     var rendered = Mustache.to_html(template_html,day_hours);
     //console.log(rendered);
     $(html_id).html(rendered);
