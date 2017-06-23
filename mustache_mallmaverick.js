@@ -288,6 +288,18 @@ function renderEventsListTemplate(template_id,template_id_no_image,html_id,not_e
             item_list.push(rendered_no_image);
         }
         
+        var start = moment(val.start_date).tz(getPropertyTimeZone());
+        var end = moment(val.end_date).tz(getPropertyTimeZone());
+        if (start.format("DMY") == end.format("DMY")){
+            val.dates = start.format("MMM D")
+            val.start_date = start.format("MMM D");
+        }
+        else{
+            val.dates = start.format("MMM D") + " - " + end.format("MMM D")
+            val.start_date = start.format("MMM D");
+            val.end_date = end.format("MMM D");
+        }
+        
     });
     if(events.length > 0){
         $(not_empty_section_id).show();
