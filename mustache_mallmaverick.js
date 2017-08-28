@@ -370,7 +370,7 @@ function renderTodaysHours(template_id,html_id){
     Mustache.parse(template_html);   // optional, speeds up future uses
     //console.log(store_details);
     var day_hours = getTodaysHours();
-    localizeObject(day_hours);
+    // localizeObject(day_hours);
     if(day_hours.is_closed){
         day_hours.is_open_css = "display:none";
         day_hours.is_closed_css = "display:inline";
