@@ -457,6 +457,7 @@ function getBlogList(){
 }
 
 function getBlogDataBySlug(slug){
+    console.log(slug)
     initData();
     var mallDataJSON = JSON.parse(getStorage().mallData);
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
