@@ -621,7 +621,7 @@ function getPromotionsList(){
 function getCouponsList(){
     initData();
     var mallDataJSON = JSON.parse(getStorage().mallData);
-    return mallDataJSON.promotions;
+    return mallDataJSON.coupons;
 }
 
 function getSocialFeed(){
