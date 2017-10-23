@@ -954,6 +954,36 @@ function getPublishedPromotionsForIds(promo_ids){
     return promos;
 }
 
+function getCouponsForIds(promo_ids){
+    var promos=[];
+    var all_promos = getStorePromotionsListByStoreName()
+    for (i = 0; i < all_promos.length; i++) {
+        for (j = 0; j < promo_ids.length; j++) { 
+            if(promo_ids[j] == all_promos[i].id){
+                promos.push(all_promos[i]);
+                
+            }
+        }
+    }
+    return promos;
+}
+
+function getPublishedPromotionsForIds(promo_ids){
+    var promos=[];
+    var all_promos = getPromotionsList();
+    for (i = 0; i < all_promos.length; i++) {
+        for (j = 0; j < promo_ids.length; j++) { 
+            var today = new Date();
+            var p_date = new Date(all_promos[i].show_on_web_date);
+            if(promo_ids[j] == all_promos[i].id && p_date <= today ) {
+                promos.push(all_promos[i]);
+                
+            }
+        }
+    }
+    return promos;
+}
+
 
 function getMallHours(){
     var hours=[];
