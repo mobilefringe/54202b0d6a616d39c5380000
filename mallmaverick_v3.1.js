@@ -1102,6 +1102,12 @@ function applyPromoJobsStyle(store_details){
     }else{
         store_details.has_jobs_css = "none;";
     }
+    
+    if(store_details.coupons.length > 0){
+        store_details.has_coupons_css = "inline;";
+    }else{
+        store_details.has_coupons_css = "none;";
+    }
 }
 
 
