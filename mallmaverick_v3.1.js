@@ -812,7 +812,7 @@ function getPropertyCouponsListByStoreName(){
 }
 
 function getCouponsListByStoreName(){
-    var coupons = getcouponsList();
+    var coupons = getCouponsList();
     $.each( coupons , function( key, val ) {
         if(val.promotionable_type == 'Store'){
             var store_details = getStoreDetailsByID(val.promotionable_id);
