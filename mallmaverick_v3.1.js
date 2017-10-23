@@ -941,7 +941,7 @@ function getPromotionsForIds(promo_ids){
 function getPublishedPromotionsForIds(promo_ids){
     var coupons=[];
     var all_coupons = getCouponsList();
-    for (i = 0; i < all_promos.length; i++) {
+    for (i = 0; i < all_coupons.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             var today = new Date();
             var p_date = new Date(all_promos[i].show_on_web_date);
