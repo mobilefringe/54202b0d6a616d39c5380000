@@ -618,6 +618,12 @@ function getPromotionsList(){
     return mallDataJSON.promotions;
 }
 
+function getCouponsList(){
+    initData();
+    var mallDataJSON = JSON.parse(getStorage().mallData);
+    return mallDataJSON.promotions;
+}
+
 function getSocialFeed(){
     var mallSocialData = JSON.parse(getStorage().mallSocialData);
     return mallSocialData.social;
