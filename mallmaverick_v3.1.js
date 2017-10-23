@@ -796,7 +796,7 @@ function getStoreCouponsListByStoreName(){
 }
 
 function getPropertyCouponsListByStoreName(){
-    var promotions = getPromotionsList();
+    var coupons = getPromotionsList();
     $.each( promotions , function( key, val ) {
         if(val.promotionable_type == 'Store'){
             var store_details = getStoreDetailsByID(val.promotionable_id);
@@ -808,7 +808,7 @@ function getPropertyCouponsListByStoreName(){
             val.store_name = "a";
         }
     });
-    return promotions.sort(sortByStoreName);
+    return coupons.sort(sortByStoreName);
 }
 
 function getPromotionsListByStoreName(){
