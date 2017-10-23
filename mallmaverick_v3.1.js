@@ -965,7 +965,7 @@ function getCouponsForIds(promo_ids){
             }
         }
     }
-    return promos;
+    return coupons;
 }
 
 function getPublishedCouponsForIds(promo_ids){
