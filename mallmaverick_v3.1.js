@@ -797,7 +797,7 @@ function getStoreCouponsListByStoreName(){
 
 function getPropertyCouponsListByStoreName(){
     var coupons = getCouponsList();
-    $.each( promotions , function( key, val ) {
+    $.each( coupons , function( key, val ) {
         if(val.promotionable_type == 'Store'){
             var store_details = getStoreDetailsByID(val.promotionable_id);
             if (store_details){
