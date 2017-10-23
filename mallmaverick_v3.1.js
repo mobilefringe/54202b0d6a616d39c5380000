@@ -959,7 +959,7 @@ function getCouponsForIds(promo_ids){
     var all_coupons = getStoreCouponsListByStoreName()
     for (i = 0; i < all_coupons.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
-            if(promo_ids[j] == all_promos[i].id){
+            if(promo_ids[j] == all_coupons[i].id){
                 coupons.push(all_coupons[i]);
                 
             }
