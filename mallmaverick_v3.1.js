@@ -650,7 +650,7 @@ function getPromotionDetailsBySlug(slug){
     return getObjects(mallDataJSON.promotions,'slug',slug)[0];
 }
 
-function getPromotionDetailsBySlug(slug){
+function getCouponDetailsBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(getStorage().mallData);
     return getObjects(mallDataJSON.coupons,'slug',slug)[0];
