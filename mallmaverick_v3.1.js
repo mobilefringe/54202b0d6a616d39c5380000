@@ -939,8 +939,8 @@ function getPromotionsForIds(promo_ids){
 }
 
 function getPublishedPromotionsForIds(promo_ids){
-    var promos=[];
-    var all_promos = getPromotionsList();
+    var coupons=[];
+    var all_coupons = getCouponsList();
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             var today = new Date();
