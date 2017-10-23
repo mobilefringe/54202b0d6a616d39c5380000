@@ -960,7 +960,7 @@ function getCouponsForIds(promo_ids){
     for (i = 0; i < all_coupons.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             if(promo_ids[j] == all_promos[i].id){
-                coupons.push(all_promos[i]);
+                coupons.push(all_coupons[i]);
                 
             }
         }
