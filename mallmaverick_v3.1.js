@@ -716,6 +716,21 @@ function getPromotionsListByStoreName(){
     });
     return promotions.sort(sortByStoreName);
 }
+function getCouponsListByStoreName(){
+    var promotions = getPromotionsList();
+    $.each( promotions , function( key, val ) {
+        if(val.promotionable_type == 'Store'){
+            var store_details = getStoreDetailsByID(val.promotionable_id);
+            if (store_details){
+                val.store_name = store_details.name;
+                val.store = store_details;
+            }
+        }else{
+            val.store_name = "a";
+        }
+    });
+    return promotions.sort(sortByStoreName);
+}
 
 function getStorePromotionsListByStoreName(){
     var promotions = getPromotionsList();
