@@ -717,7 +717,7 @@ function getPromotionsListByStoreName(){
     return promotions.sort(sortByStoreName);
 }
 function getCouponsListByStoreName(){
-    var promotions = getPromotionsList();
+    var promotions = getCouponsList();
     $.each( promotions , function( key, val ) {
         if(val.promotionable_type == 'Store'){
             var store_details = getStoreDetailsByID(val.promotionable_id);
