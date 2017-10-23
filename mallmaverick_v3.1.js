@@ -792,7 +792,7 @@ function getStoreCouponsListByStoreName(){
             val.store_name = "a";
         }
     });
-    return promotions.sort(sortByStoreName);
+    return coupons.sort(sortByStoreName);
 }
 
 function getPropertyPromotionsListByStoreName(){
