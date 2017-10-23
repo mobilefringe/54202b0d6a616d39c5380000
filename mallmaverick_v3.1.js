@@ -956,7 +956,7 @@ function getPublishedPromotionsForIds(promo_ids){
 
 function getCouponsForIds(promo_ids){
     var coupons=[];
-    var all_coupons = getStorePromotionsListByStoreName()
+    var all_coupons = getStoreCouponsListByStoreName()
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
             if(promo_ids[j] == all_promos[i].id){
