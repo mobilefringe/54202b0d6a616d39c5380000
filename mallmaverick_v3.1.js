@@ -946,7 +946,7 @@ function getPublishedPromotionsForIds(promo_ids){
             var today = new Date();
             var p_date = new Date(all_coupons[i].show_on_web_date);
             if(promo_ids[j] == all_coupons[i].id && p_date <= today ) {
-                promos.push(all_promos[i]);
+                promos.push(all_coupons[i]);
                 
             }
         }
