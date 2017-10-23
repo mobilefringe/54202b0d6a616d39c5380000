@@ -823,7 +823,7 @@ function getCouponsListByStoreName(){
             val.store_name = "a";
         }
     });
-    return promotions.sort(sortByStoreName);
+    return coupons.sort(sortByStoreName);
 }
 
 
