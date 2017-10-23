@@ -969,7 +969,7 @@ function getCouponsForIds(promo_ids){
 }
 
 function getPublishedCouponsForIds(promo_ids){
-     var coupons=[];
+    var coupons=[];
     var all_coupons = getCouponsList();
     for (i = 0; i < all_coupons.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
@@ -981,7 +981,7 @@ function getPublishedCouponsForIds(promo_ids){
             }
         }
     }
-    return promos;
+    return coupons;
 }
 
 
