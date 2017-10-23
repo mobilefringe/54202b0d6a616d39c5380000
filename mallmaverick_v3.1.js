@@ -650,6 +650,12 @@ function getPromotionDetailsBySlug(slug){
     return getObjects(mallDataJSON.promotions,'slug',slug)[0];
 }
 
+function getPromotionDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(getStorage().mallData);
+    return getObjects(mallDataJSON.coupons,'slug',slug)[0];
+}
+
 function getEventDetailsBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(getStorage().mallData);
