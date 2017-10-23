@@ -955,7 +955,7 @@ function getPublishedPromotionsForIds(promo_ids){
 }
 
 function getCouponsForIds(promo_ids){
-    var promos=[];
+    var coupons=[];
     var all_promos = getStorePromotionsListByStoreName()
     for (i = 0; i < all_promos.length; i++) {
         for (j = 0; j < promo_ids.length; j++) { 
@@ -965,7 +965,7 @@ function getCouponsForIds(promo_ids){
             }
         }
     }
-    return promos;
+    return coupons;
 }
 
 function getPublishedCouponsForIds(promo_ids){
