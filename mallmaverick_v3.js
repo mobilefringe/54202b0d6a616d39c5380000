@@ -1319,14 +1319,3 @@ $.fn.serializeObject = function()
     });
     return o;
 };
-
-function getPropertyHolidayHours(){
-    var regular_hours = [];
-    var hours = getPropertyHours();
-    for(i = 0; i < hours.length; i++){
-        if (hours[i].store_ids == null && hours[i].is_holiday == true){
-            regular_hours.push(hours[i]);
-        }
-    }
-    return regular_hours;
-}
