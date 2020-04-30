@@ -83,7 +83,7 @@
 }
 
 .mapplic-map.mapplic-zoomable.mapplic-dragging .mapplic-map-image {
-  cursor: url(/images/map_images/closedhand.cur), move;
+  cursor: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000//1568045468701/closedhand.cur"), move;
 }
 
 /* Pin types */
