@@ -5,9 +5,9 @@
  */
 
 ;(function($) {
-	    "use strict";
+	  "use strict";
 
-	    var Mapplic = function(element) {
+	  var Mapplic = function(element) {
 
       var self = this;
     
