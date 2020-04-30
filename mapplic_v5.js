@@ -855,6 +855,7 @@
 
 				// zoom-out button
 				this.zoomout = $('<a></ha>').attr('href', '#').addClass('mapplic-button mapplic-zoomout-button').appendTo(this.el);
+				console.log('this.zoomout', this.zoomout)
 				this.zoomout.on('click touchstart', function(e) {
 					e.preventDefault();
 					self.container.stopMomentum();
