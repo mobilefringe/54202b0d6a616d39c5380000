@@ -526,14 +526,14 @@ a.mapplic-zoomout-button {
 }
 
 .mapplic-fullscreen-button {
-  background-image: url(/images/map_images/fullscreen.svg);
+  background-image: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000/image/svg+xml/1568045468704/fullscreen.svg");
   background-size: 14px 14px;
   top: 0;
   left: 0;
 }
 
 .mapplic-fullscreen .mapplic-fullscreen-button {
-  background-image: url(/images/map_images/fullscreen-exit.svg);
+  background-image: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000/image/svg+xml/1568045468704/fullscreen-exit.svg");
 }
 
 .mapplic-fullscreen .mapplic-container {
