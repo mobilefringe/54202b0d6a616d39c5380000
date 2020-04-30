@@ -475,7 +475,7 @@
 
 /* Clear Button */
 .mapplic-clear-button {
-  background-image: url(/images/map_images/reset.svg);
+  background-image: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000/image/svg+xml/1568045468716/reset.svg");
   background-size: 16px 16px;
   display: none;
   bottom: 69px;
@@ -501,13 +501,13 @@
 }
 
 a.mapplic-zoomin-button {
-  background-image: url(/images/map_images/plus.svg);
+  background-image: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000/image/svg+xml/1568045468715/plus.svg");
   background-size: 10px 10px;
   border-bottom: 1px solid #eee;
 }
 
 a.mapplic-zoomout-button {
-  background-image: url(/images/map_images/minus.svg);
+  background-image: url("//codecloud.cdn.speedyrails.net/sites/54205f856a616d39c5c70000/image/svg+xml/1568045468706/minus.svg");
   background-size: 10px 10px;
 }
 
