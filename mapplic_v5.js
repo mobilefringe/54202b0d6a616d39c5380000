@@ -47,7 +47,7 @@
 		};
 
 		self.loc = {
-			more: 'More',
+			more: 'View Details',
 			search: 'Search',
 		}
 
@@ -162,7 +162,7 @@
 						if (self.o.zoom) s.zoom(location);
 					});
 					this.position();
-				
+
 					// making it visible
 					this.el.stop().css({opacity: 1}).show();
 					if (self.o.zoom) this.zoom(location);
@@ -183,7 +183,7 @@
 			this.zoom = function(location) {
 				var ry = 0.5,
 					zoom = location.zoom ? parseFloat(location.zoom) : self.o.maxscale;
-				
+
 				ry = ((self.container.el.height() - this.drop) / 2 + this.drop) / self.container.el.height();
 				self.moveTo(location.x, location.y, zoom, 600, ry);
 			}
@@ -271,7 +271,7 @@
 					items: { src: location.image },
 					type: 'image',
 					removalDelay: 300,
-					mainClass: 'mfp-fade',	
+					mainClass: 'mfp-fade',
 					callbacks: {
 						beforeClose: function() {
 							s.hide();
@@ -308,7 +308,7 @@
 				if (this.hovertipdesc) this.desc = $('<div></div>').addClass('mapplic-tooltip-description').appendTo(this.wrap);
 				this.triangle = $('<div></div>').addClass('mapplic-tooltip-triangle').appendTo(this.wrap);
 
-				// events 
+				// events
 				// markers + old svg
 				$(self.map).on('mouseover', '.mapplic-layer a', function() {
 					var id = '';
@@ -544,7 +544,7 @@
 			this.toggle = function(group, state) {
 				$('*[id="' + group + '"]', self.map).toggle(state);
 				$('*[data-category*="' + group + '"]', self.map).each(function() {
-					var attr = $(this).attr('data-category'); 
+					var attr = $(this).attr('data-category');
 					if (attr == group) $(this).toggle(state);
 					else { // multi-group support
 						var groups = attr.split(','),
@@ -566,7 +566,7 @@
 					if (title) $('<span></span>').addClass('mapplic-legend-label').text(group.title).appendTo(toggle);
 					if (group.color) circle.css('background-color', group.color);
 					if (group.switchoff == 'true') input.prop('checked', false);
-					
+
 					input.change(function() {
 						$('.mapplic-toggle > input[data-group="' + group.id + '"]', self.el).prop('checked', this.checked);
 						s.toggle(group.id, this.checked);
@@ -673,9 +673,9 @@
 							var title = $('<h4></h4').text(category.title).appendTo(link);
 							if (!category.about) title.addClass('mapplic-margin');
 							category.count = $('<span></span>').text('(0)').addClass('mapplic-list-count').appendTo(title);
-							
+
 							if (category.about) $('<span></span>').addClass('mapplic-about').html(category.about).appendTo(link);
-							
+
 							var toggle = self.legend.newToggle(category)
 							if (toggle) toggle.appendTo(item);
 
@@ -726,7 +726,7 @@
 				else if (self.o.thumbholder) this.placeholder(location.title).appendTo(link);
 				$('<h4></h4>').text(location.title).appendTo(link);
 				$('<span></span>').html(location.about).addClass('mapplic-about').appendTo(link);
-			
+
 				// groups
 				if (location.category) {
 					var groups = location.category.toString().split(',');
@@ -742,7 +742,7 @@
 			this.search = function() {
 				var keyword = this.input.val(),
 					s = this;
-				
+
 				if (keyword) self.clear.fadeIn(100);
 				else self.clear.fadeOut(100);
 
@@ -805,12 +805,12 @@
 
 				return this;
 			}
-		}		
+		}
 
 		// clear button
 		function ClearButton() {
 			this.el = null;
-			
+
 			this.init = function() {
 				this.el = $('<a></a>').attr('href', '#').addClass('mapplic-button mapplic-clear-button').appendTo(self.container.el);
 
@@ -834,7 +834,7 @@
 		// zoom buttons
 		function ZoomButtons() {
 			this.el = null;
-		
+
 			this.init = function() {
 				this.el = $('<div></div>').addClass('mapplic-zoom-buttons').appendTo(self.container.el);
 
@@ -925,7 +925,7 @@
 			this.calcHeight = function(x) {
 				var val = x.toString().replace('px', '');
 
-				if ((val == 'auto') && (self.container.el))  val = self.container.el.width() * self.contentHeight / self.contentWidth; 
+				if ((val == 'auto') && (self.container.el))  val = self.container.el.width() * self.contentHeight / self.contentWidth;
 				else if (val.slice(-1) == '%') val = $(window).height() * val.replace('%', '') / 100;
 
 				if ($.isNumeric(val)) return val;
@@ -989,14 +989,14 @@
 
 						s.position.x = mouse.x;
 						s.position.y = mouse.y;
-						
+
 						velocity.x = (s.position.x - previous.x);
 						velocity.y = (s.position.y - previous.y);
 					}
 					else {
 						s.position.x += velocity.x;
 						s.position.y += velocity.y;
-						
+
 						velocity.x *= friction;
 						velocity.y *= friction;
 
@@ -1016,7 +1016,7 @@
 				$('.mapplic-map-image', self.map).on('mousedown', function(e) {
 					self.dragging = false;
 					self.map.addClass('mapplic-dragging');
-					
+
 					var initial = {x: e.pageX, y: e.pageY};
 
 					s.stopMomentum();
@@ -1030,7 +1030,7 @@
 						mouse.x = normalizeX(e.pageX - initial.x + self.x);
 						mouse.y = normalizeY(e.pageY - initial.y + self.y);
 					});
-				
+
 					$(document).on('mouseup', function() {
 						self.map.off('mousemove');
 						$(document).off('mouseup');
@@ -1247,7 +1247,7 @@
 
 								// backward compatibility - legacy format
 								$('svg a', this).each(function() {
-									var location = self.l[$(this).attr('xlink:href').substr(1)]; 
+									var location = self.l[$(this).attr('xlink:href').substr(1)];
 									if (location) {
 										$(this).attr('class', 'mapplic-clickable');
 										location.el = $(this);
@@ -1269,7 +1269,7 @@
 							}).appendTo(layer);
 							break;
 
-						// others 
+						// others
 						default:
 							alert('File type ' + extension + ' is not supported!');
 					}
@@ -1303,12 +1303,12 @@
 				self.levelselect.appendTo(self.levels);
 				var down = $('<a href="#"></a>').addClass('mapplic-levels-down').appendTo(self.levels);
 				self.container.el.append(self.levels);
-			
+
 				self.levelselect.change(function() {
 					var value = $(this).val();
 					self.switchLevel(value);
 				});
-			
+
 				up.click(function(e) {
 					e.preventDefault();
 					if (!$(this).hasClass('mapplic-disabled')) self.switchLevel('+');
@@ -1330,7 +1330,7 @@
 					self.el.addClass('mapplic-portrait');
 					if (self.el.hasClass('mapplic-fullscreen')) self.container.el.height($(window).height());
 					else {
-						var height = Math.min(Math.max(self.container.el.width() * self.contentHeight / self.contentWidth, $(window).height() * 2/3), $(window).height() - 66); 
+						var height = Math.min(Math.max(self.container.el.width() * self.contentHeight / self.contentWidth, $(window).height() * 2/3), $(window).height() - 66);
 						self.container.el.height(height);
 					}
 				}
@@ -1395,7 +1395,7 @@
 			self.legend.applyToggles();
 
 			// CSV support
-			if (self.o.csv) { 
+			if (self.o.csv) {
 				Papa.parse(self.o.csv, {
 					header: true,
 					download: true,
@@ -1467,7 +1467,7 @@
 
 			if (location.fill) return location.fill;
 			else if (self.g[groups[0]] && self.g[groups[0]].color) return self.g[groups[0]].color;
-			else if (self.o.fillcolor && self.o.fillcolor !== "none") return self.o.fillcolor;
+			else if (self.o.fillcolor) return self.o.fillcolor;
 			else return false;
 		}
 
@@ -1617,7 +1617,7 @@
 
 					var fill = null;
 					if (location.fill) fill = location.fill;
-					else if (self.o.fillcolor) fill = self.o.fillcolor
+					else if (self.o.fillcolor && self.o.fillcolor !== "none") fill = self.o.fillcolor
 
 					if (fill) {
 						elem.css('fill', fill);
@@ -1714,7 +1714,7 @@
 					self.hideLocation();
 					self.switchLevel(location.level);
 					self.container.revealChild(location);
-					if (self.o.zoom) bboxZoom(location.el); 
+					if (self.o.zoom) bboxZoom(location.el);
 					break;
 				case 'lightbox':
 					self.switchLevel(location.level);
@@ -1761,7 +1761,7 @@
 					location.x = pos.x;
 					location.y = pos.y;
 				}
-				
+
 				var top = location.y * 100,
 					left = location.x * 100;
 				location.el.css({'top': top + '%', 'left': left + '%'});
