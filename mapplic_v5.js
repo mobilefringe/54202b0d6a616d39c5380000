@@ -1,5 +1,13 @@
-"use strict";
-var Mapplic = function (element) {
+/*
+ * Mapplic - Custom Interactive Map Plugin by @sekler
+ * Version 5.0.2
+ * https://www.mapplic.com/
+ */
+
+;(function($) {
+	"use strict";
+
+	var Mapplic = function(element) {
 
   var self = this;
 
@@ -1424,4 +1432,10 @@ $.fn.mapplic = function (options) {
     // Store plugin object in element's data
     element.data('mapplic', instance);
   });
-}
+};
+})(jQuery);
+
+// call plugin on map instances
+jQuery(document).ready(function($) {
+	$('[id^=mapplic-id]').mapplic();
+});
