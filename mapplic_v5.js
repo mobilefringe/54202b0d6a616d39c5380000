@@ -1385,10 +1385,9 @@
 		}
 
 		var mapReady = function() {
-			
              setTimeout(function () {
-              // Trigger event
-             self.el.trigger('mapready', self);
+                // Trigger event
+                self.el.trigger('mapready', self);
             }, 1000);
 			// alphabetic sort
 			if (self.o.alphabetic && self.sidebar) self.sidebar.sort();
