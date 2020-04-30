@@ -1270,7 +1270,7 @@ a.mapplic-zoomout-button {
 }
 
 .mapplic-portrait.mapplic-element {
-  height: auto !important;
+  height: auto;
 }
 
 .mapplic-portrait .mapplic-list-container {
